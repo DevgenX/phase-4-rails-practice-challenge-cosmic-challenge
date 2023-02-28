@@ -3,7 +3,6 @@ class Mission < ApplicationRecord
     belongs_to :planet
 
     validates :name, presence: true
-    validates :mission, uniqueness: { scope: :name}
-
-
+    validates :scientist_id, presence: true, uniqueness: { scope: :name}
+    validates :planet_id, presence: true
 end
